@@ -1,0 +1,14 @@
+int main() { 
+int risposta;
+cout<<" benvenuto a superfarmers semplificiato, vuoi iniziare una partita o sentire il regolamento?"<<endl;
+
+
+
+
+
+
+
+
+
+
+}
