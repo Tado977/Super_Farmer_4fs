@@ -1,11 +1,25 @@
 int main() { 
-int risposta;
-cout<<" benvenuto a superfarmers semplificiato, vuoi iniziare una partita o sentire il regolamento?"<<endl;
-
-
-
-
-
+int risposta, regolamento;
+do { 
+cout<<" benvenuto a superfarmers semplificiato, vuoi iniziare una partita o sentire il regolamento? (inserire 1 o 2)"<<endl;
+cin>>risposta;
+if (risposta = 1) { 
+}else { 
+cout<<"il gioco superfarmers può essere giocato da al massimo sei giocatori, con l'obbiettivo di completare il tabellone con tutti gli animali"<<endl;
+cout<<"a turno verranno lanciati due dadi, per ogni coppia di animali formata (tranne cavallo o mucca) si prenderà un tassello del rispettivo animale"<<endl;
+cout<<"se esce volpe si perdono tutti i conigli tranne uno, se esce lupo si perdono tutti gli animali tranne conigli e cavalli, a meno che abbiate un cane di piccola o grossa taglia;"<<endl;
+cout<<" è possibili effettuare scambi dal tanto al poco o dal poco al tanto, ma non entrambi ( non sarà possibile scambiare un cavallo per due mucche e sei conigli per una pecora nello stesso turno)"<<endl;
+cout<<"desidera vedere i possibili scambi?;"
+cin>>regolamento;
+if (regolamento= 1 ) { 
+cout<<"gli scambi possibili sono:"<<endl;
+cout<<"6 conigli per una pecora"<<endl;}
+cout<<"1 maiale per due pecore"<<endl;}
+cout<<"1 mucca per tre maiali"<<endl;}
+cout<<"1 cavallo per due mucche"<<endl;}
+cout<<"1 pecora per un cane piccolo"<<endl;}
+cout<<"1 mucca per un cane grande"<<endl;}
+while (risposta = 2)}
 
 
 
