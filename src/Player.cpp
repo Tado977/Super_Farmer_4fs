@@ -92,42 +92,42 @@ if (
     (dado1 >= 1 && dado1 <= 4 && dado2 >= 1 && dado2 <= 4) 
 )
 {
-
+    AggiungiConiglio((2+Animali[0]/2));
 }
 if (
     // Capra (5)
     (dado1 == 5 && dado2 == 5) 
 )
 {
-    
+    AggiungiCapra((2+Animali[1]/2));
 }
 if (
     // Maiale (6-7 sul dado1, 7 su dado2)
     ((dado1 == 6 || dado1 == 7) && dado2 == 6) 
 )
 {
-    
+    AggiungiMaiale((2+Animali[2]/2));
 }
 if (
     // Pecora (8-9 dado1, 8 dado2)
     ((dado1 == 8 || dado1 == 9) && dado2 == 8) 
 )
 {
-    
+    AggiungiPecora((2+Animali[3]/2)); 
 }
 if (
     // Mucca (12 dado1, 9-10 dado2)
     (dado1 == 12 && (dado2 == 9 || dado2 == 10)) 
 )
 {
-    
+    AggiungiMucca((2+Animali[5]/2));
 }
 if (
     // Cavallo (10 dado1, 11 dado2)
     (dado1 == 10 && dado2 == 11)
 )
 {
-    
+    AggiungiCavallo((2+Animali[4]/2));
 }
 
 // ANIMALI DIVERSI:
