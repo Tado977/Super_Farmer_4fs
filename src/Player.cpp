@@ -85,7 +85,36 @@ void Player::TiroDadi()
     11)Cavallo
     12)Lupo
     */
-
+//VOLPE E LUPO:
+if(dado2==12)
+{
+    if(CaneGrande==false)
+    {
+    for(int i=1;i<6;i++)
+    Animali[i]=0;
+    }
+    else
+    {
+        CaneGrande=false;
+    }
+    if(dado1!=11){
+        return;
+    }
+}
+if(dado1==11)
+{
+    if(CanePiccolo==false)
+    {
+    Animali[0]=0;
+    }
+    else
+    {
+        CanePiccolo=false;
+    }
+    if(dado2==12){
+        return;
+    }
+}
 // ANIMALI UGUALI:
 if (
     // Coniglio (1-4)
