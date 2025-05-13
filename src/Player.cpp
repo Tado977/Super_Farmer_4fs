@@ -86,28 +86,49 @@ void Player::TiroDadi()
     12)Lupo
     */
 
-// animali uguali casi:
+// ANIMALI UGUALI:
 if (
     // Coniglio (1-4)
-    (dado1 >= 1 && dado1 <= 4 && dado2 >= 1 && dado2 <= 4) ||
+    (dado1 >= 1 && dado1 <= 4 && dado2 >= 1 && dado2 <= 4) 
+)
+{
 
+}
+if (
     // Capra (5)
-    (dado1 == 5 && dado2 == 5) ||
-
+    (dado1 == 5 && dado2 == 5) 
+)
+{
+    
+}
+if (
     // Maiale (6-7 sul dado1, 7 su dado2)
-    ((dado1 == 6 || dado1 == 7) && dado2 == 6) ||
-
+    ((dado1 == 6 || dado1 == 7) && dado2 == 6) 
+)
+{
+    
+}
+if (
     // Pecora (8-9 dado1, 8 dado2)
-    ((dado1 == 8 || dado1 == 9) && dado2 == 8) ||
-
+    ((dado1 == 8 || dado1 == 9) && dado2 == 8) 
+)
+{
+    
+}
+if (
     // Mucca (12 dado1, 9-10 dado2)
-    (dado1 == 12 && (dado2 == 9 || dado2 == 10)) ||
-
+    (dado1 == 12 && (dado2 == 9 || dado2 == 10)) 
+)
+{
+    
+}
+if (
     // Cavallo (10 dado1, 11 dado2)
     (dado1 == 10 && dado2 == 11)
 )
- {
-    // Logica di riproduzione per animali uguali
+{
+    
 }
 
+// ANIMALI DIVERSI:
 }
