@@ -5,12 +5,11 @@
     2)maiali
     3)pecore
     4)cavalli
-    5)volpi
-    6)mucche
+    5)mucche
     */
 Player::Player()
 {
-    for(int i=0;i<7;i++)
+    for(int i=0;i<6;i++)
     Animali[i]=0;
 }
 
@@ -39,12 +38,7 @@ void Player::AggiungiCavallo(int n)
     Animali[4]=+n;
 }
 
-void Player::AggiungiVolpe(int n)
-{
-    Animali[5]=+n;
-}
-
 void Player::AggiungiMucca(int n)
 {
-    Animali[6]=+n;
+    Animali[5]=+n;
 }

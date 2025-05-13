@@ -5,15 +5,14 @@
 
 class Player
 {
-    int Animali[7];
+    int Animali[6];
     /*
     0)conigli
     1)capre
     2)maiali
     3)pecore
     4)cavalli
-    5)volpi
-    6)mucche
+    5)mucche
     */
 public:
     Player();
@@ -22,8 +21,8 @@ public:
     void AggiungiMaiale(int);
     void AggiungiPecora(int);
     void AggiungiCavallo(int);
-    void AggiungiVolpe(int);
     void AggiungiMucca(int);
+
 
 
 
