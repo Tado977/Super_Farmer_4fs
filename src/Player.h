@@ -1,0 +1,33 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#pragma once
+
+class Player
+{
+    int Animali[7];
+    /*
+    0)conigli
+    1)capre
+    2)maiali
+    3)pecore
+    4)cavalli
+    5)volpi
+    6)mucche
+    */
+public:
+    Player();
+    void AggiungiConiglio(int);
+    void AggiungiCapra(int);
+    void AggiungiMaiale(int);
+    void AggiungiPecora(int);
+    void AggiungiCavallo(int);
+    void AggiungiVolpe(int);
+    void AggiungiMucca(int);
+
+
+
+
+};
+
+#endif
