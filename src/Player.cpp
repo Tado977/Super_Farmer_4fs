@@ -1,4 +1,8 @@
 #include "Player.h"
+#include "cstdlib"
+#include "ctime"
+using namespace std;
+
     /*
     0)conigli
     1)capre
@@ -9,8 +13,11 @@
     */
 Player::Player()
 {
+    srand(time(NULL));
+    CaneGrande=false;
+    CanePiccolo=false;
     for(int i=0;i<6;i++)
-    Animali[i]=0;
+        Animali[i]=0;
 }
 
 void Player::AggiungiConiglio(int n)
@@ -41,4 +48,42 @@ void Player::AggiungiCavallo(int n)
 void Player::AggiungiMucca(int n)
 {
     Animali[5]=+n;
+}
+
+void Player::TiroDadi()
+{
+    int dado1, dado2;
+    dado1=rand()%12+1;
+    /*
+    dado1:
+    1)Coniglio
+    2)Coniglio
+    3)Coniglio
+    4)Coniglio
+    5)Capra
+    6)Maiale
+    7)Maiale
+    8)Pecora
+    9)Pecora
+    10)Cavallo
+    11)Volpe
+    12)Mucca
+    */
+    dado2=rand()%12+1;
+    /*
+    dado1:
+    1)Coniglio
+    2)Coniglio
+    3)Coniglio
+    4)Coniglio
+    5)Capra
+    6)Capra
+    7)Maiale
+    8)Pecora
+    9)Mucca
+    10)Mucca
+    11)Cavallo
+    12)Lupo
+    */
+
 }
