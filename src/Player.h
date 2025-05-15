@@ -5,7 +5,7 @@
 
 class Player
 {
-    int Animali[5];
+    int Animali[4];
     bool CaneGrande;
     bool CanePiccolo;
     /*

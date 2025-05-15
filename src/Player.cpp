@@ -5,18 +5,17 @@ using namespace std;
 
     /*
     0)conigli
-    1)capre
-    2)maiali
-    3)pecore
-    4)cavalli
-    5)mucche
+    1)maiali
+    2)pecore
+    3)cavalli
+    4)mucche
     */
 Player::Player()
 {
     srand(time(NULL));
     CaneGrande=false;
     CanePiccolo=false;
-    for(int i=0;i<6;i++)
+    for(int i=0;i<5;i++)
         Animali[i]=0;
 }
 
@@ -25,29 +24,24 @@ void Player::AggiungiConiglio(int n)
     Animali[0]=+n;
 }
 
-void Player::AggiungiCapra(int n)
+void Player::AggiungiMaiale(int n)
 {
     Animali[1]=+n;
 }
 
-void Player::AggiungiMaiale(int n)
+void Player::AggiungiPecora(int n)
 {
     Animali[2]=+n;
 }
 
-void Player::AggiungiPecora(int n)
+void Player::AggiungiCavallo(int n)
 {
     Animali[3]=+n;
 }
 
-void Player::AggiungiCavallo(int n)
-{
-    Animali[4]=+n;
-}
-
 void Player::AggiungiMucca(int n)
 {
-    Animali[5]=+n;
+    Animali[4]=+n;
 }
 
 void Player::TiroDadi()
@@ -60,8 +54,8 @@ void Player::TiroDadi()
     2)Coniglio
     3)Coniglio
     4)Coniglio
-    5)Capra
-    6)Maiale
+    5)Coniglio
+    6)Coniglio
     7)Maiale
     8)Pecora
     9)Pecora
@@ -76,11 +70,11 @@ void Player::TiroDadi()
     2)Coniglio
     3)Coniglio
     4)Coniglio
-    5)Capra
-    6)Capra
+    5)Coniglio
+    6)Coniglio
     7)Maiale
     8)Pecora
-    9)Mucca
+    9)Pecora
     10)Mucca
     11)Cavallo
     12)Lupo
@@ -117,43 +111,36 @@ if(dado1==11)
 }
 // ANIMALI UGUALI:
 if (
-    // Coniglio (1-4)
-    (dado1 >= 1 && dado1 <= 4 && dado2 >= 1 && dado2 <= 4) 
+    // Coniglio (1-6)
+    (dado1 >= 1 && dado1 <= 6 && dado2 >= 1 && dado2 <= 6) 
 )
 {
     AggiungiConiglio((2+Animali[0]/2));
     return;
 }
+
 if (
-    // Capra (5)
-    (dado1 == 5 && dado2 == 5) 
+    // Maiale (7 sul dado1, 7 su dado2)
+    (dado1 == 7 && dado2 == 7) 
 )
 {
-    AggiungiCapra((2+Animali[1]/2));
+    AggiungiMaiale((2+Animali[1]/2));
     return;
 }
 if (
-    // Maiale (6-7 sul dado1, 7 su dado2)
-    ((dado1 == 6 || dado1 == 7) && dado2 == 6) 
+    // Pecora (8-9 dado1, 8-9 dado2)
+    ((dado1 == 8 || dado1 == 9) && (dado2 == 8 || dado2 == 9)) 
 )
 {
-    AggiungiMaiale((2+Animali[2]/2));
+    AggiungiPecora((2+Animali[2]/2)); 
     return;
 }
 if (
-    // Pecora (8-9 dado1, 8 dado2)
-    ((dado1 == 8 || dado1 == 9) && dado2 == 8) 
+    // Mucca (10 dado1, 12 dado2)
+    (dado1 == 10 && dado2 == 12) 
 )
 {
-    AggiungiPecora((2+Animali[3]/2)); 
-    return;
-}
-if (
-    // Mucca (12 dado1, 9-10 dado2)
-    (dado1 == 12 && (dado2 == 9 || dado2 == 10)) 
-)
-{
-    AggiungiMucca((2+Animali[5]/2));
+    AggiungiMucca((2+Animali[4]/2));
     return;
 }
 if (
@@ -161,15 +148,42 @@ if (
     (dado1 == 10 && dado2 == 11)
 )
 {
-    AggiungiCavallo((2+Animali[4]/2));
+    AggiungiCavallo((2+Animali[3]/2));
     return;
 }
-
-if(dado1>=1 || dado1<=4)
+//ANIMALI DIVERSI
+if(dado1>=1 || dado1<=6)
 {
-    AggiungiConiglio(Animali[0]/2)
+    AggiungiConiglio(Animali[0]/2);
 }
-
+if(dado2>=1 || dado2<=6)
+{
+    AggiungiConiglio(Animali[0]/2);
+}
+if(dado1==7)
+{
+    AggiungiMaiale(Animali[1]/2);
+}
+if(dado2==7)
+{
+    AggiungiMaiale(Animali[1]/2);
+}
+if(dado1==8 || dado1==8)
+{
+    AggiungiPecora(Animali[2]/2);
+}
+if(dado2==8 || dado2==8)
+{
+    AggiungiPecora(Animali[2]/2);
+}
+if(dado1==12 || dado2==10)
+{
+    AggiungiMucca(Animali[4]/2);
+}
+if(dado1==10 || dado2==11)
+{
+    AggiungiCavallo(Animali[3]/2);
+}
 
 }
 
