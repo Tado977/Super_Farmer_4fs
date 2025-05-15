@@ -185,30 +185,13 @@ if(dado1==10 || dado2==11)
     AggiungiCavallo(Animali[3]/2);
 }
 
-}
-
-
-
-
-
-
-
-
-
-
-
-void Scambio()
-{
-
-
 // STAMPA IVENTARIO:
 Void Player::Stampainventario{
     string Nomianimali[6]:
 {
-"conigli";
-"capre";
-"maiali"
+"conigli"
 "pecore";
+"maiali"
 "cavalli";
 "mucche";
 };
@@ -217,63 +200,91 @@ for (int i=0; i<6; i++)
 { cout<<"il numero di animali è"<<nomeanimali[i]: <<:<<animali[i];
 
 // FUNZIONE SCAMBIO
-void Player::Scambi{
-    int risposta,risposta1,risp;
-    cout<<"si vuole fare uno scambio dal tanto al poco o dal poco al tanto (1 o 2)?"<<endl;
-    cin>>risposta;
-    if (risposta =1){
-        cout<<"quale scambio si vuole fare(1,2,3)"<<endl;
- cout<<"6 conigli per una pecora"<<endl;}
- cout<<"1 maiale per due pecore"<<endl;}
- cout<<"1 mucca per tre maiali"<<endl;}
+void Player::Scambio{
+    int risposta1;
+    do{
+ cout<<"quale scambio si vuole fare(1,2,3,4,5,6)"<<endl;
+ cout<<"6 conigli per una pecora : inserire 1"<<endl;}
+ cout<<"1 maiale per due pecore: inserire 2"<<endl;}
+ cout<<"1 mucca per tre maiali: inserire 3"<<endl;}
+ cout<<"1 cavallo per due mucche: inserire 4"<<endl;}
+ cout<<"1 pecora per un cane piccolo: inserire 5"<<endl;}
+ cout<<"1 mucca per un cane grande: inserire 6"<<endl;}
+ cout<<"1 pecora per 6 conigli : inserire 7"<<endl;}
+ cout<<"due pecore per un maiale: inserire 8"<<endl;}
+ cout<<"tre maiali e 1 mucca: inserire 9"<<endl;}
+ cout<<"due mucche per un cavallo: inserire 10"<<endl;}
+ cout<<"cane piccolo per una pecora: inserire 11"<<endl;}
+ cout<<"cane grande per una mucca: inserire 12"<<endl;}
 cin>>risposta1;
+}while(risposta1>12)
     if (risposta1 = 1){
-        do {
             cout<<" si è scambiati sei conigli per una pecora;
-                animali[1] = animali[1]-6;
-                animali[2] = animali[2]+1;
-        }while (animali[1]=6 ||animali[2]<6)
+                animali[0] = animali[0]-6;
+                animali[1] = animali[1]+1;
+    }
 if (risposta1 = 2){
-        do {
             cout<<" si è scambiati 1 maiale per due pecore;
-                animali[2] = animali[2]+2;
-                animali[3] = animali[3]-1;
-        }while (animali[3]>1|| animali[2]<3)
+                animali[1] = animali[1]+2;
+                animali[2] = animali[2]-1;
 if (risposta1 = 3){
-        do {
             cout<<" si è scambiati 1 mucca per tre maiali;
+                animali[3] = animali[3]-1;
+                animali[2] = animali[2]+3;
+if (risposta1 = 4){
+     cout<<" si è scambiati 1 cavallo per due mucche;
                 animali[4] = animali[4]-1;
-                animali[3] = animali[3]+3;
-        }while (animali[3]<1 || animali[4]>1)        
-}else {
-cout<<"quale scambio si vuole fare(1,2,3)"<<endl;  
- cout<<"1 cavallo per due mucche"<<endl;}
- cout<<"1 pecora per un cane piccolo"<<endl;}
- cout<<"1 mucca per un cane grande"<<endl;}
-cin>>risp;
-   if (risp = 1){
-        do {
-            cout<<" si è scambiati 1 cavallo per due mucche;
-                animali[5] = animali[5]-1;
-                animali[4] = animali[4]+2;
-        }while (animali[1]>1 ||animali[4]<2)
-if (risp = 2){
+                animali[3] = animali[3]+2;
+}
+if (risposta1 = 5){
         do {
             cout<<" si è scambiati 1 pecora cane piccolo ;
                 Canepiccolo ==false;
-                animali[2] = animali[2]-1;
+                animali[1] = animali[1]-1;
         }while (animali[2]>1|| Canepiccolo==false)
-if (risp = 3){
+if (risp = 6){
         do {
             cout<<" si è scambiati 1 mucca cane grande;
-                animali[4] = animali[4]-1;
+                animali[3] = animali[3]-1;
                 Canegrande==true;
-        }while (animali[4]>1 || Canegrande==false )
-
-
-
-
+        }while (animali[3]>1 || Canegrande==false)
 }
+if (risposta1 = 7){
+            cout<<" si è scambiati sei conigli per una pecora;
+                animali[0] = animali[0]-6;
+                animali[1] = animali[1]+1;
+    }
+if (risposta1 = 8){
+            cout<<" si è scambiati 1 maiale per due pecore;
+                animali[1] = animali[1]+2;
+                animali[2] = animali[2]-1;
+if (risposta1 = 9){
+            cout<<" si è scambiati 1 mucca per tre maiali;
+                animali[3] = animali[3]-1;
+                animali[2] = animali[2]+3;
+if (risposta1 = 10){
+     cout<<" si è scambiati 1 cavallo per due mucche;
+                animali[4] = animali[4]-1;
+                animali[3] = animali[3]+2;
+}
+if (risposta1 = 11){
+        do {
+            cout<<" si è scambiati 1 pecora cane piccolo ;
+                Canepiccolo ==false;
+                animali[1] = animali[1]-1;
+        }while (animali[2]>1|| Canepiccolo==false)
+if (risp = 12){
+        do {
+            cout<<" si è scambiati 1 mucca cane grande;
+                animali[3] = animali[3]-1;
+                Canegrande==true;
+        }while (animali[3]>1 || Canegrande==false)
+}
+
+
+
+
+
 
 
 
