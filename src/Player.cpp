@@ -122,6 +122,7 @@ if (
 )
 {
     AggiungiConiglio((2+Animali[0]/2));
+    return;
 }
 if (
     // Capra (5)
@@ -129,6 +130,7 @@ if (
 )
 {
     AggiungiCapra((2+Animali[1]/2));
+    return;
 }
 if (
     // Maiale (6-7 sul dado1, 7 su dado2)
@@ -136,6 +138,7 @@ if (
 )
 {
     AggiungiMaiale((2+Animali[2]/2));
+    return;
 }
 if (
     // Pecora (8-9 dado1, 8 dado2)
@@ -143,6 +146,7 @@ if (
 )
 {
     AggiungiPecora((2+Animali[3]/2)); 
+    return;
 }
 if (
     // Mucca (12 dado1, 9-10 dado2)
@@ -150,6 +154,7 @@ if (
 )
 {
     AggiungiMucca((2+Animali[5]/2));
+    return;
 }
 if (
     // Cavallo (10 dado1, 11 dado2)
@@ -157,7 +162,30 @@ if (
 )
 {
     AggiungiCavallo((2+Animali[4]/2));
+    return;
 }
+
+if(dado1>=1 || dado1<=4)
+{
+    AggiungiConiglio(Animali[0]/2)
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+void Scambio()
+{
+
 
 // STAMPA IVENTARIO:
 Void Player::Stampainventario{
@@ -231,7 +259,7 @@ if (risp = 3){
 
 
 
-
+}
 
 
 

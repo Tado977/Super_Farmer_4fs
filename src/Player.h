@@ -5,7 +5,7 @@
 
 class Player
 {
-    int Animali[6];
+    int Animali[5];
     bool CaneGrande;
     bool CanePiccolo;
     /*
@@ -26,6 +26,8 @@ public:
     void AggiungiMucca(int);
 
     void TiroDadi();
+
+    void Scambio();
 
 
 
