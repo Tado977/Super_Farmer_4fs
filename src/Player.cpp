@@ -3,6 +3,26 @@
 #include "ctime"
 using namespace std;
 
+
+class Player {
+private:
+    int Animali[5];
+    bool CanePiccolo;
+    bool CaneGrande;
+
+public:
+    Player();
+    void AggiungiConiglio(int n);
+    void AggiungiMaiale(int n);
+    void AggiungiPecora(int n);
+    void AggiungiCavallo(int n);
+    void AggiungiMucca(int n);
+    void TiroDadi();
+    void Stampainventario();
+    void Scambio();
+};
+
+#endif
     /*
     0)conigli
     1)maiali
