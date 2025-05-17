@@ -1,4 +1,7 @@
-#include <iostream>
+#include<iostream>
+#include<string>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 void mostraRegolamento() {
@@ -23,7 +26,12 @@ void mostraScambi() {
 }
 
 int main() {
+    srand(time(0));
     int risposta;
+    
+    
+    
+    
     
     cout << "Benvenuto a Superfarmers" << endl;
 
@@ -53,12 +61,79 @@ int main() {
         }
 
     } while (risposta != 3);
-
+    
+    
+    
+    
+    
+    //INIZIO PARTITA
+    int n_players;
+    string nome;
+    cout<<"inserire tot giocatori"<<endl;
+    cin>>n_players;
+    Player*giocatori[n_players];
+    cout<<"inserire nome giocatori"<<endl;
+    for(int i=0; i<n_players;i++){
+        cin>>nome;
+        giocatori[i].SetNome(nome);
+    }
+    bool vittoria=false;
+    int vincitore=0;
+    
+    
+    
+    
+    string scelta;
+    int turno=0;//ATTENZIONE: indica il numero del giocatore che deve giocare
+    while (vittoria==false){
+        cout<<"TURNO DI "<<giocatori[turno].GetNome<<endl<<endl<<endl;
+        cout<<"stampa inventario..."<<endl;
+        giocatori[turno].Stampainventario();
+        for (int i=0; i<100000;i++){
+            scelta=0;
+        }
+        cout<<"tiro dei dadi..."<<endl;
+        for (int i=0; i<100000;i++){
+            scelta=0;
+        }
+        giocatori[turno].TiroDadi();
+        giocatori[turno].Stampainventario();
+        cout<<endl<<endl<<endl;
+        while(scelta!="x"&&scelta!="X")
+        cout<<"inserire scelta:"<<endl;
+        cout<<"A. effettuare uno scambio con la Riserva"<<endl;
+        cout<<"B. effettuare uno scambio con un Giocatore"<<endl;
+        cout<<"X. concludere il turno"<<endl;
+        cin>>scelta;
+        switch (scelta){
+            case'a':
+            case'A':
+                giocatori[turno].Scambio();
+            break;
+            case'b':
+            case'B':
+                //DA INSERIRE SCAMBIO TRA GIOCATORI
+            break;
+            case'X':
+            case'x':
+                cout<<"turno finito"<<endl;
+                giocatori[turno].//DA INSERIRE SCARTO DEGLI ANIMALI IN ECCESSO
+            break;
+        }
+        for(int i=0; i<n)
+        if(giocatori[i].GetConigli>0 && giocatori[i].GetPecore>0 && giocatori[i].GetMaiali>0 &&giocatori[i].GetMucche>0 &&giocatori[i].GetCavalli>0){
+            vittoria=true;
+            vincitore=i;
+        }
+        
+        turno++;
+        if(turno>=n_players){
+            turno=0;
+        }
+    }
+    cout<<"VINCE "<<giocatori[vincitore].GetNome()<<endl;
+    
+    
     cout << "Grazie per aver giocato a Superfarmers Semplificato. Arrivederci!" << endl;
     return 0;
 }
-
-
-
-
-
