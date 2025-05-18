@@ -2,17 +2,22 @@
 #include "cstdlib"
 #include "ctime"
 #include <iostream>
+#include <string>
 using namespace std;
 
 
 class Player {
 private:
+    string nome;
     int Animali[5];
     bool CanePiccolo;
     bool CaneGrande;
 
 public:
     Player();
+    void SetNome(string n);
+    string GetNome();
+    void AggiungiAnimale(int n, int tipo);
     void AggiungiConiglio(int n);
     void AggiungiMaiale(int n);
     void AggiungiPecora(int n);
@@ -21,6 +26,7 @@ public:
     void TiroDadi();
     void Stampainventario();
     void Scambio();
+    int GetAnimale(int tipo);
 };
 
     /*
@@ -33,10 +39,16 @@ public:
 Player::Player()
 {
     srand(time(NULL));
+    nome="\0"
     CaneGrande=false;
     CanePiccolo=false;
     for(int i=0;i<5;i++)
         Animali[i]=0;
+}
+
+void Player::AggiungiAnimale(int n, int tipo)
+{
+    Animali[tipo]=+n;
 }
 
 void Player::AggiungiConiglio(int n)
@@ -358,6 +370,8 @@ void Player::Scambio() {
         }
     }
 }
-
+int Player::GetAnimale(int tipo){
+    return Animali[tipo];
+}
 
 
