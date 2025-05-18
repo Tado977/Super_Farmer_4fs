@@ -27,6 +27,7 @@ public:
     void Stampainventario();
     void Scambio();
     int GetAnimale(int tipo);
+    void ConcludiTurno();
 };
 
     /*
@@ -373,5 +374,11 @@ void Player::Scambio() {
 int Player::GetAnimale(int tipo){
     return Animali[tipo];
 }
-
+void Player::ConcludiTurno(){
+    for (int i=0; i<5;i++){
+        if(Animali[i]>(4-i)){
+            Animali[i]=(4-i);
+        }
+    }
+}
 
