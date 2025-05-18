@@ -25,13 +25,85 @@ void mostraScambi() {
     cout << "1 mucca -> 1 cane grande" << endl;
 }
 
+void ScambioGiocatori(int a, int b){
+    string nomeanimali[5]:{" conigli"," pecore"," maiali"," mucche"," cavalli"};
+    char risposta;
+    int tipoA,tipoB, nA,nB, check;
+    cout<<"avvio scambio tra "<<giocatori[a].GetNome();
+    cout<<" e "<<giocatori[b].GetNome();
+    cout<<endl<<endl<<endl;
+    cout<<"INVENTARIO DI "<<giocatori[a].GetNome()<<endl;
+    giocatori[a].Stampainventario();
+    cout<<endl<<endl<<endl<<endl;
+    cout<<"INVENTARIO DI "<<giocatori[b].GetNome()<<endl;
+    giocatori[b].Stampainventario();
+    cout<<"cosa vuoi cedere?: scegliere opzione"<<endl;
+    cout<<"1: conigli"<<endl<<"2: pecore"<<endl<<"3: maiali"<<endl<<"4: mucche"<<endl<<"5: cavallo"<<endl;
+    do{
+        cin>>tipoA;
+        tipoA--;
+        if (giocatori[a].GetAnimale(tipoA)>0){
+            cout<<"possiedi "<<giocatori[a].GetAnimale(tipoA)<<nomeanimali[tipoA]<<endl;
+            check=true;
+        }else{
+            cout<<"non ne possiedi al momento, inserire un'altra opzione"<<endl;
+        }
+    }while(check==false);
+    check==false;
+    cout<<"quanti ne vuoi cedere?"<<endl;
+    do{
+        cin>>nA;
+        if (giocatori[a].GetAnimale(tipoA)>nA){
+            check=true;
+        }else{
+            cout<<"non ne possiedi abbastanza, inserisci un nuovo valore"<<endl;
+        }
+    }while(check==false);
+    check==false;
+    
+    cout<<"cosa vuoi chiedere a "<<giocatori[b].GetNome()<<"?: scegliere opzione"<<endl;
+    cout<<"1: conigli"<<endl<<"2: pecore"<<endl<<"3: maiali"<<endl<<"4: mucche"<<endl<<"5: cavallo"<<endl;
+    do{
+        cin>>tipoB;
+        tipoB--;
+        if (giocatori[b].GetAnimale(tipoB)>0){
+            cout<<"il giocatore ha "<<giocatori[a].GetAnimale(tipoA)<<nomeanimali[tipoB]<<endl;
+            check=true;
+        }else{
+            cout<<"il giocatore non ne possiede al momento, inserire un'altra opzione"<<endl;
+        }
+    }while(check==false);
+    check==false;
+    cout<<"quanti ne vuoi chiedere?"<<endl;
+    do{
+        cin>>nB;
+        if (giocatori[b].GetAnimale(tipoB)>nB){
+            check=true;
+        }else{
+            cout<<"il giocatore non ne possiede abbastanza, inserisci un nuovo valore da richiedere"<<endl;
+        }
+    }while(check==false);
+    check==false;
+    cout<<giocatori[b]<<", accetti lo scambio di "<<nA<<nomeanimali[tipoA]<<" per "<<nB<<nomeanimali[tipoB]<<"? (y/n)"<<endl;
+    cin>>risposta;
+    if(risposta=="y"||risposta=="Y"){
+        //ANIMALI CEDUTI DA A A B
+        giocatori[a].AggiungiAnimale(-nA, tipoA);
+        giocatori[b].AggiungiAnimale(nA, tipoA);
+        //ANIMALI ACQUISITI DA A A B
+        giocatori[a].AggiungiAnimale(nB, tipoB);
+        giocatori[b].AggiungiAnimale(-nB, tipoB);
+        cout<<"scambio effettuato! :3"<<endl;
+    }else{
+        cout<<"scambio annullato :["
+    }
+} 
+
+
+
 int main() {
     srand(time(0));
     int risposta;
-    
-    
-    
-    
     
     cout << "Benvenuto a Superfarmers" << endl;
 
@@ -62,10 +134,6 @@ int main() {
 
     } while (risposta != 3);
     
-    
-    
-    
-    
     //INIZIO PARTITA
     int n_players;
     string nome;
@@ -80,16 +148,24 @@ int main() {
     bool vittoria=false;
     int vincitore=0;
     
-    
-    
-    
     char scelta;
     int turno=0;//ATTENZIONE: indica il numero del giocatore che deve giocare
     while (vittoria==false){
         cout<<"TURNO DI "<<giocatori[turno].GetNome<<endl<<endl<<endl;
         cout<<"stampa inventario..."<<endl;
         giocatori[turno].Stampainventario();
+        /*
+        FORSE FUNZIONE WAIT
+        for (int i=0; i<100000;i++){
+            scelta=0;
+        }*/
         cout<<"tiro dei dadi..."<<endl;
+        /*
+        FORSE FUNZIONE WAIT
+        for (int i=0; i<100000;i++){
+            scelta=0;
+        }
+        */
         giocatori[turno].TiroDadi();
         giocatori[turno].Stampainventario();
         cout<<endl<<endl<<endl;
@@ -99,6 +175,8 @@ int main() {
         cout<<"B. effettuare uno scambio con un Giocatore"<<endl;
         cout<<"X. concludere il turno"<<endl;
         cin>>scelta;
+        string gioc_scelto;
+        bool check=false;
         switch (scelta){
             case'a':
             case'A':
@@ -106,16 +184,29 @@ int main() {
             break;
             case'b':
             case'B':
-                //DA INSERIRE SCAMBIO TRA GIOCATORI
+                cout<<"inserire nome del giocatore "<<endl;
+                do{
+                    cin>>gioc_scelto;  
+                    for(int i=0; i<n_players;i++){
+                        if(giocatori[i].GetNome==gioc_scelto){
+                            check=true;
+                        }
+                        if (check==false){
+                            cout<<"nome non valido"<<endl;
+                        }
+                    }
+                }while(check==false);
+                
+                ScambioGiocatori(turno, i);
             break;
             case 'X':
             case 'x':
+                giocatori[turno].ConcludiTurno();
                 cout<<"turno finito"<<endl;
-                giocatori[turno].//DA INSERIRE SCARTO DEGLI ANIMALI IN ECCESSO
             break;
         }
         for(int i=0; i<n_players;)
-        if(giocatori[i].GetConigli>0 && giocatori[i].GetPecore>0 && giocatori[i].GetMaiali>0 &&giocatori[i].GetMucche>0 &&giocatori[i].GetCavalli>0){
+        if(giocatori[i].GetAnimale(0)>0 && giocatori[i].GetAnimale(1) && giocatori[i].GetAnimale(2) &&giocatori[i].GetAnimale(3) &&giocatori[i].GetAnimale(4)>0){
             vittoria=true;
             vincitore=i;
         }
