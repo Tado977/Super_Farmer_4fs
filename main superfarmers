@@ -89,18 +89,7 @@ int main() {
         cout<<"TURNO DI "<<giocatori[turno].GetNome<<endl<<endl<<endl;
         cout<<"stampa inventario..."<<endl;
         giocatori[turno].Stampainventario();
-        /*
-        FORSE FUNZIONE WAIT
-        for (int i=0; i<100000;i++){
-            scelta=0;
-        }*/
         cout<<"tiro dei dadi..."<<endl;
-        /*
-        FORSE FUNZIONE WAIT
-        for (int i=0; i<100000;i++){
-            scelta=0;
-        }
-        */
         giocatori[turno].TiroDadi();
         giocatori[turno].Stampainventario();
         cout<<endl<<endl<<endl;
