@@ -2,22 +2,17 @@
 #include "cstdlib"
 #include "ctime"
 #include <iostream>
-#include <string>
 using namespace std;
 
 
-class Player {
+/*class Player {
 private:
-    string nome;
     int Animali[5];
     bool CanePiccolo;
     bool CaneGrande;
 
 public:
     Player();
-    void SetNome(string n);
-    string GetNome();
-    void AggiungiAnimale(int n, int tipo);
     void AggiungiConiglio(int n);
     void AggiungiMaiale(int n);
     void AggiungiPecora(int n);
@@ -26,9 +21,7 @@ public:
     void TiroDadi();
     void Stampainventario();
     void Scambio();
-    int GetAnimale(int tipo);
-    void ConcludiTurno();
-};
+};*/
 
     /*
     0)conigli
@@ -37,19 +30,15 @@ public:
     3)cavalli
     4)mucche
     */
+
+//METODI AGGIUNTA    
 Player::Player()
 {
     srand(time(NULL));
-    nome="\0"
     CaneGrande=false;
     CanePiccolo=false;
     for(int i=0;i<5;i++)
         Animali[i]=0;
-}
-
-void Player::AggiungiAnimale(int n, int tipo)
-{
-    Animali[tipo]=+n;
 }
 
 void Player::AggiungiConiglio(int n)
@@ -76,6 +65,32 @@ void Player::AggiungiMucca(int n)
 {
     Animali[4]=+n;
 }
+
+
+//METODI GET
+int Player::GetConigli()
+{
+    return Animali[0];
+}
+int Player::GetMaiali()
+{
+    return Animali[2];
+}
+int Player::GetPecore()
+{
+    return Animali[2];
+}
+
+int Player::GetCavalli()
+{
+    return Animali[3];
+}
+
+int Player::GetMucche()
+{
+    return Animali[4];
+}
+
 
 void Player::TiroDadi()
 {
@@ -371,14 +386,6 @@ void Player::Scambio() {
         }
     }
 }
-int Player::GetAnimale(int tipo){
-    return Animali[tipo];
-}
-void Player::ConcludiTurno(){
-    for (int i=0; i<5;i++){
-        if(Animali[i]>(4-i)){
-            Animali[i]=(4-i);
-        }
-    }
-}
+
+
 

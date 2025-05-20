@@ -25,6 +25,12 @@ public:
     void AggiungiCavallo(int);
     void AggiungiMucca(int);
 
+    int GetConigli(int);
+    int GetMaiali(int);
+    int GetGetPecore(int);
+    int GetCavalli(int);
+    int GetMucche(int);
+
     void TiroDadi();
 
     void Scambio();
