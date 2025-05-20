@@ -42,23 +42,52 @@ int main() {
 	cout << "Benvenuto a Superfarmers" << endl;
 
 	do {
-		cout << "Cosa desideri fare?" << endl;
-		cout << "1. Iniziare una partita" << endl;
-		cout << "2. Leggere il regolamento" << endl;
-		cout << "3. Uscire" << endl;
-		cout << "Inserisci il numero corrispondente: ";
-		cin >> risposta;
+		
+#include <iostream>
+#include <limits> // Per std::numeric_limits
+using namespace std;
 
-		if (risposta == 1) {
-			    cout << "==============================" << endl;
-                            cout << "     INIZIO DELLA PARTITA     " << endl;
-                            cout << "==============================" << endl;
-		} else if (risposta == 2) {
-			mostraRegolamento();
+void mostraRegolamento() {
+    cout << "Ecco il regolamento del gioco..." << endl;
+    // Implementazione del regolamento
+}
 
-			int mostraScambiOpzione;
-			cout << "\nVuoi vedere anche i possibili scambi? (1 = SC,, 2 = No): ";
-			cin >> mostraScambiOpzione;
+void mostraScambi() {
+    cout << "Ecco i possibili scambi..." << endl;
+    // Implementazione degli scambi
+}
+
+int main() {
+    int risposta;
+
+    do {
+      try {
+            cout << "Cosa desideri fare?" << endl;
+            cout << "1. Iniziare una partita" << endl;
+            cout << "2. Leggere il regolamento" << endl;
+            cout << "3. Uscire" << endl;
+            cout << "Inserisci il numero corrispondente: ";
+
+            cin >> risposta;}
+
+            if (risposta != 1,2,3 ) {
+                throw "Hai inserito un valore non valido.";
+            }
+
+            if (risposta == 1) {
+                cout << "==============================" << endl;
+                cout << "     INIZIO DELLA PARTITA     " << endl;
+                cout << "==============================" << endl;
+            } else if (risposta == 2) {
+                mostraRegolamento();
+try{
+                int mostraScambiOpzione;
+                cout << "\nVuoi vedere anche i possibili scambi? (1 = Sì, 2 = No): ";
+                cin >> mostraScambiOpzione;
+}
+                if (mostraScambiOpzione != 1,2) {
+                    throw "Hai inserito un valore non valido per la scelta degli scambi.";
+                }
 
 			if (mostraScambiOpzione == 1) {
 				mostraScambi();
