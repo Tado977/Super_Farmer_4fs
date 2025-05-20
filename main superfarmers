@@ -4,34 +4,35 @@
 #include <ctime>
 using namespace std;
 
+// Funzione che mostra il regolamento del gioco
 void mostraRegolamento() {
-	cout << "\n--- REGOLAMENTO DEL GIOCO SUPERFARMERS ---" << endl;
-	cout << "1. Il gioco puC2 essere giocato da un massimo di sei giocatori." << endl;
-	cout << "2. L'obiettivo C( completare il tabellone raccogliendo tutti gli animali." << endl;
-	cout << "3. A ogni turno si lanciano due dadi." << endl;
-	cout << "4. Per ogni coppia di animali ottenuta (esclusi cavallo e mucca), si riceve un tassello dell'animale corrispondente." << endl;
-	cout << "5. Se esce una volpe, si perdono tutti i conigli tranne uno." << endl;
-	cout << "6. Se esce un lupo, si perdono tutti gli animali tranne conigli e cavalli, a meno che si possieda un cane (piccolo o grande)." << endl;
-	cout << "7. Si possono effettuare scambi tra animali dal tanto al poco o viceversa, ma non entrambi nello stesso turno." << endl;
+    cout << "\n===== REGOLAMENTO DEL GIOCO SUPERFARMERS =====\n" << endl;
+
+    cout << "1. Il gioco può essere giocato da un massimo di sei giocatori." << endl;
+    cout << "2. L'obiettivo è completare il tabellone raccogliendo almeno un esemplare" << endl;
+    cout << "   di ogni tipo di animale: coniglio, pecora, maiale, mucca e cavallo." << endl;
+    cout << "3. A ogni turno si lanciano due dadi speciali con raffigurati animali e predatori." << endl;
+    cout << "4. Per ogni coppia di animali uguali ottenuti (esclusi mucca e cavallo)," << endl;
+    cout << "   si ottiene un tassello dell'animale corrispondente." << endl;
+    cout << "5. Se compare una volpe, il giocatore perde tutti i conigli tranne uno," << endl;
+    cout << "   a meno che possieda un cane piccolo (che viene sacrificato per proteggerli)." << endl;
+    cout << "6. Se compare un lupo, si perdono tutti gli animali eccetto i conigli e i cavalli," << endl;
+    cout << "   a meno che si possieda un cane grande, che annulla l'effetto del lupo." << endl;
+    cout << "7. A ogni turno è possibile effettuare scambi tra animali (dal tanto al poco" << endl;
+    cout << "   o viceversa), ma non entrambe le direzioni nello stesso turno." << endl;
 }
 
+// Funzione che mostra gli scambi possibili tra animali
 void mostraScambi() {
-	cout << "\n--- SCAMBI POSSIBILI ---" << endl;
-	cout << "6 conigli -> 1 pecora" << endl;
-	cout << "1 maiale -> 2 pecore" << endl;
-	cout << "1 mucca -> 3 maiali" << endl;
-	cout << "1 cavallo -> 2 mucche" << endl;
-	cout << "1 pecora -> 1 cane piccolo" << endl;
-	cout << "1 mucca -> 1 cane grande" << endl;
+    cout << "\n===== SCAMBI POSSIBILI TRA ANIMALI =====\n" << endl;
+
+    cout << "6 conigli    -> 1 pecora" << endl;
+    cout << "1 maiale     -> 2 pecore" << endl;
+    cout << "1 mucca      -> 3 maiali" << endl;
+    cout << "1 cavallo    -> 2 mucche" << endl;
+    cout << "1 pecora     -> 1 cane piccolo" << endl;
+    cout << "1 mucca      -> 1 cane grande" << endl;
 }
-
-void ScambioGiocatori(int a, int b) {
-
-
-
-}
-
-
 
 int main() {
 
@@ -49,8 +50,9 @@ int main() {
 		cin >> risposta;
 
 		if (risposta == 1) {
-			cout << "\n--- INIZIO DELLA PARTITA ---" << endl;
-
+			    cout << "==============================" << endl;
+                            cout << "     INIZIO DELLA PARTITA     " << endl;
+                            cout << "==============================" << endl;
 		} else if (risposta == 2) {
 			mostraRegolamento();
 
@@ -97,18 +99,8 @@ int main() {
 		cout<<"TURNO DI "<<giocatori[turno].GetNome<<endl<<endl<<endl;
 		cout<<"stampa inventario..."<<endl;
 		giocatori[turno].Stampainventario();
-		/*
-		FORSE FUNZIONE WAIT
-		for (int i=0; i<100000;i++){
-		    scelta=0;
-		}*/
-		cout<<"tiro dei dadi..."<<endl;
-		/*
-		FORSE FUNZIONE WAIT
-		for (int i=0; i<100000;i++){
-		    scelta=0;
-		}
-		*/
+
+		cout<<"lancio dei dadi"<<endl;
 		giocatori[turno].TiroDadi();
 		giocatori[turno].Stampainventario();
 		cout<<endl<<endl<<endl;
