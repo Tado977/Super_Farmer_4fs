@@ -5,7 +5,7 @@
 using namespace std;
 
 
-/*class Player {
+class Player {
 private:
     int Animali[5];
     bool CanePiccolo;
@@ -21,7 +21,7 @@ public:
     void TiroDadi();
     void Stampainventario();
     void Scambio();
-};*/
+};
 
     /*
     0)conigli
