@@ -6,7 +6,7 @@
 using namespace std;
 
 
-/*class Player {
+class Player {
 private:
     int Animali[5];
     bool CanePiccolo;
@@ -22,7 +22,7 @@ public:
     void TiroDadi();
     void Stampainventario();
     void Scambio();
-};*/
+};
 
     /*
     0)conigli
@@ -85,12 +85,12 @@ int Player::GetPecore()
 
 int Player::GetCavalli()
 {
-    return Animali[3];
+    return Animali[4];
 }
 
 int Player::GetMucche()
 {
-    return Animali[4];
+    return Animali[3];
 }
 
 
@@ -134,7 +134,7 @@ if(dado2==12)
 {
     if(CaneGrande==false)
     {
-    for(int i=1;i<4;i++)
+    for(int i=1;i<3;i++)
     Animali[i]=0;
     }
     else
