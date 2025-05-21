@@ -134,7 +134,7 @@ if(dado2==12)
 {
     if(CaneGrande==false)
     {
-    for(int i=1;i<4;i++)
+    for(int i=1;i<6;i++)
     Animali[i]=0;
     }
     else
