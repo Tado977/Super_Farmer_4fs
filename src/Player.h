@@ -38,6 +38,17 @@ public:
     void Stampainventario();
 
 
-};
 
-#endif
+
+   int GetAnimale(int tipo);
+   void AggiungiAnimale(int n, int tipo);
+   void ConcludiTurno();
+string GetNome()
+   {
+   return Nome;
+   }
+   void SetNome(string n)
+   {
+   Nome=n;
+   }
+};#endif
