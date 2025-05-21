@@ -387,5 +387,19 @@ void Player::Scambio() {
     }
 }
 
+void Player::ConcludiTurno(){
+   for (int i=0; i<5;i++){
+       if(Animali[i]>(4-i)){
+           Animali[i]=(4-i);
+       }
+   }
+}
 
+int Player::GetAnimale(int tipo){
+   return Animali[tipo];
+}
 
+void Player::AggiungiAnimale(int n, int tipo)
+{
+   Animali[tipo]=+n;
+}
