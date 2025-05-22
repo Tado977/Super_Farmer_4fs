@@ -190,7 +190,7 @@ if(dado1>=1 && dado1<=6)
 {
     AggiungiConiglio(Animali[0]/2);
 }
-if(dado2>=1 || dado2<=6)
+if(dado2>=1 && dado2<=6)
 {
     AggiungiConiglio(Animali[0]/2);
 }
@@ -202,11 +202,11 @@ if(dado2==7)
 {
     AggiungiMaiale(Animali[1]/2);
 }
-if(dado1==8 || dado1==8)
+if(dado1==8 || dado1==9)
 {
     AggiungiPecora(Animali[2]/2);
 }
-if(dado2==8 || dado2==8)
+if(dado2==8 || dado2==9)
 {
     AggiungiPecora(Animali[2]/2);
 }
