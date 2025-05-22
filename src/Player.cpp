@@ -29,27 +29,27 @@ Player::Player()
 
 void Player::AggiungiConiglio(int n)
 {
-    Animali[0]=+n;
+    Animali[0]+=n;
 }
 
 void Player::AggiungiMaiale(int n)
 {
-    Animali[1]=+n;
+    Animali[1]+=n;
 }
 
 void Player::AggiungiPecora(int n)
 {
-    Animali[2]=+n;
+    Animali[2]+=n;
 }
 
 void Player::AggiungiCavallo(int n)
 {
-    Animali[3]=+n;
+    Animali[3]+=n;
 }
 
 void Player::AggiungiMucca(int n)
 {
-    Animali[4]=+n;
+    Animali[4]+=n;
 }
 
 
@@ -69,12 +69,12 @@ int Player::GetPecore()
 
 int Player::GetCavalli()
 {
-    return Animali[4];
+    return Animali[3];
 }
 
 int Player::GetMucche()
 {
-    return Animali[3];
+    return Animali[4];
 }
 
 
@@ -186,7 +186,7 @@ if (
     return;
 }
 //ANIMALI DIVERSI
-if(dado1>=1 || dado1<=6)
+if(dado1>=1 && dado1<=6)
 {
     AggiungiConiglio(Animali[0]/2);
 }
@@ -413,5 +413,5 @@ int Player::GetAnimale(int tipo){
 
 void Player::AggiungiAnimale(int n, int tipo)
 {
-    Animali[tipo]=+n;
+    Animali[tipo]+=n;
 }
