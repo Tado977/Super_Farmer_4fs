@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/tadin/Documents/GitHub/Super_Farmer_4fs/include",
-      "program": "c:/Users/tadin/Documents/GitHub/Super_Farmer_4fs/include/build/Debug/outDebug",
+      "cwd": "c:/Users/tadin/Documents/GitHub/Super_Farmer_4fs/src",
+      "program": "c:/Users/tadin/Documents/GitHub/Super_Farmer_4fs/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

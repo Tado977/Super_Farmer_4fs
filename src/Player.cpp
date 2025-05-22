@@ -283,7 +283,7 @@ void Player::Scambio() {
 
      
         if (risposta1 == 1){
-        if (animali[1]<1){
+        if (Animali[1]<1){
                 cout<<"non hai pecore sufficineti per lo scambio";}else{        
             cout << "Si è scambiato 1 pecora per 6 conigli" << endl;
             Animali[1] -= 1;
@@ -292,23 +292,23 @@ void Player::Scambio() {
         } 
 
         if (risposta1 == 2) {
-        if(animali[2]<1){ cout<<"non hai abbastanza maiali per due pecore";}else{
+        if(Animali[2]<1){ cout<<"non hai abbastanza maiali per due pecore";}else{
         {
-         << "Si è scambiato 1 maiale per due pecore" << endl;
+            cout<< "Si è scambiato 1 maiale per due pecore" << endl;
             Animali[2] -= 1;
             Animali[1] += 2;
         }
         }
         }
         if (risposta1 == 3){
-        if(animali[3]<1){cout<<"non hai mucche sufficienti"}else{
+        if(Animali[3]<1){cout<<"non hai mucche sufficienti"}else{
             cout << "Si è scambiato 1 mucca per tre maiali" << endl;
             Animali[3] -= 1;
             Animali[2] += 3;
         }
         }
         else if (risposta1 == 4) {
-        if (animali[4]<1) {
+        if (Animali[4]<1) {
             cout<<"non hai cavalli sufficienti"
         }
         else{

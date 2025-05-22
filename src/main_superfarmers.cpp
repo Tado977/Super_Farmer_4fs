@@ -74,10 +74,12 @@ int main() {
 	}
 	bool vittoria=false;
 	int vincitore=0;
-
+	bool check;
+	string gioc_scelto;
 	char scelta;
 	int turno=0;//ATTENZIONE: indica il numero del giocatore che deve giocare
 	while (vittoria==false) {
+		check=false;
 		cout<<"TURNO DI "<<giocatori[turno].GetNome()<<endl<<endl<<endl;
 		cout<<"stampa inventario..."<<endl;
 		giocatori[turno].Stampainventario();
@@ -93,8 +95,7 @@ int main() {
 		cout<<"B. effettuare uno scambio con un Giocatore"<<endl;
 		cout<<"X. concludere il turno"<<endl;
 		cin>>scelta;
-		string gioc_scelto;
-		bool check=false;
+		
 		switch (scelta) {
 		case'a':
 			case'A':
@@ -191,6 +192,9 @@ int main() {
 			cout<<"turno finito"<<endl;
 			break;
 		}
+		
+		}while(scelta!='x'&&scelta!='X');
+
 		for(int i=0; i<n_players;){
 			if(giocatori[i].GetAnimale(0)>0 && giocatori[i].GetAnimale(1) && giocatori[i].GetAnimale(2) &&giocatori[i].GetAnimale(3) &&giocatori[i].GetAnimale(4)>0){
 				vittoria=true;
@@ -198,12 +202,6 @@ int main() {
 				i++;
 				}
 			}
-		}while(scelta!='x'&&scelta!='X');
-
-
-
-
-
 
 
 
