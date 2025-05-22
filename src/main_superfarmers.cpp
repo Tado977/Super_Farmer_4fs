@@ -42,6 +42,7 @@ int main() {
 	int opzione;
 
 	cout << "Benvenuto a Superfarmers" << endl;
+	do{
 	cout<<"Cosa vuoi fare?"<<endl;
 	cout<<"1) Mostra scambi possibili"<<endl;
 	cout<<"2) Mostra regolamento"<<endl;
@@ -49,7 +50,7 @@ int main() {
 	cin>>opzione;
 	if(opzione==1)mostraScambi();
 	if(opzione==2)mostraRegolamento();
-	
+	}while(opzione!=3);
 
 	//INIZIO PARTITA
 	int n_players;
