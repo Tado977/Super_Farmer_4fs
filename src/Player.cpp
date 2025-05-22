@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "../include/Player.h"
 #include "cstdlib"
 #include "ctime"
 #include <iostream>
@@ -301,7 +301,7 @@ void Player::Scambio() {
         }
         }
         if (risposta1 == 3){
-        if(Animali[3]<1){cout<<"non hai mucche sufficienti"}else{
+        if(Animali[3]<1){cout<<"non hai mucche sufficienti";}else{
             cout << "Si è scambiato 1 mucca per tre maiali" << endl;
             Animali[3] -= 1;
             Animali[2] += 3;
@@ -309,7 +309,7 @@ void Player::Scambio() {
         }
         else if (risposta1 == 4) {
         if (Animali[4]<1) {
-            cout<<"non hai cavalli sufficienti"
+            cout<<"non hai cavalli sufficienti";
         }
         else{
             cout << "Si è scambiato 1 cavallo per due mucche" << endl;
@@ -349,7 +349,7 @@ void Player::Scambio() {
         } while (risposta1 < 7 || risposta1 > 12);
 
         if(risposta1 == 7){
-            if (animali[0]<6){
+            if (Animali[0]<6){
                 cout<<"non hai conigli sufficineti per lo scambio";}
                 else{
             cout << "Si è scambiati sei conigli per una pecora" << endl;
@@ -358,7 +358,7 @@ void Player::Scambio() {
             }
         }
         else if (risposta1 == 8) 
-        if(animali[1]<2){
+        if(Animali[1]<2){
                 cout<<"non hai pecore sufficineti per lo scambio";}else{        
             cout << "Si è scambiato 2 pecore per un maiale" << endl;
             Animali[1] -= 2;
@@ -366,7 +366,7 @@ void Player::Scambio() {
         }
         }
         if (risposta1 == 9)
-         if (animali[2]<3){
+         if (Animali[2]<3){
                 cout<<"non hai maiali sufficineti per lo scambio";}else{            
         {
             cout << "Si è scambiato 3 maiali per una mucca" << endl;

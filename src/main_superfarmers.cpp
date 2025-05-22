@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "../include/Player.h"
 #include<iostream>
 #include<string>
 #include <cstdlib>
@@ -38,7 +38,7 @@ void mostraScambi() {
 
 int main() {
 
-	srand(time(0));
+	srand(time(NULL));
 	int opzione;
 
 	cout << "Benvenuto a Superfarmers" << endl;
@@ -59,7 +59,7 @@ int main() {
 	//VARIABILI PER LO SCAMBIO TRA GIOCATORI
 	char risposta;
 	int a,b;//giocatori coinvolti nello scambio: a propone, b approva
-	int tipoA,tipoB, nA,nB, check;
+	int tipoA,tipoB, nA,nB;
 
 
 
@@ -83,7 +83,6 @@ int main() {
 		cout<<"TURNO DI "<<giocatori[turno].GetNome()<<endl<<endl<<endl;
 		cout<<"stampa inventario..."<<endl;
 		giocatori[turno].Stampainventario();
-
 		cout<<"lancio dei dadi"<<endl;
 		giocatori[turno].TiroDadi();
 		giocatori[turno].Stampainventario();

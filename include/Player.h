@@ -1,8 +1,8 @@
-#ifndef PLAYER_H
+/*#ifndef PLAYER_H
 #define PLAYER_H
 
-#pragma once
-
+#pragma once */
+using namespace std;
 #include <string>
 class Player
 {
@@ -53,4 +53,4 @@ public:
     }
 };
 
-#endif
+//#endif
