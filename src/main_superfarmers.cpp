@@ -79,7 +79,7 @@ int main() {
 	string gioc_scelto;
 	char scelta;
 	int turno=0;//ATTENZIONE: indica il numero del giocatore che deve giocare
-	while (vittoria==false) {
+	while (!vittoria) {
 		check=false;
 		cout<<"TURNO DI "<<giocatori[turno].GetNome()<<endl<<endl<<endl;
 		cout<<"stampa inventario..."<<endl;
@@ -111,11 +111,11 @@ int main() {
 					if(giocatori[b].GetNome()==gioc_scelto) {
 						check=true;
 					}
-					if (check==false) {
+					if (!check) {
 						cout<<"nome non valido, riprova"<<endl;
 					}
 				}
-			} while(check==false);
+			} while(!check);
 			
 			cout<<"avvio scambio tra "<<giocatori[a].GetNome();
 			cout<<" e "<<giocatori[b].GetNome();
@@ -136,7 +136,7 @@ int main() {
 				} else {
 					cout<<"non ne possiedi al momento, inserire un'altra opzione"<<endl;
 				}
-			} while(check==false);
+			} while(!check);
 			check=false;
 			cout<<"quanti ne vuoi cedere?"<<endl;
 			do {
@@ -146,7 +146,7 @@ int main() {
 				} else {
 					cout<<"non ne possiedi abbastanza, inserisci un nuovo valore"<<endl;
 				}
-			} while(check==false);
+			} while(!check);
 			check=false;
 
 			cout<<"cosa vuoi chiedere a "<<giocatori[b].GetNome()<<"?: scegliere opzione"<<endl;
@@ -160,8 +160,8 @@ int main() {
 				} else {
 					cout<<"il giocatore non ne possiede al momento, inserire un'altra opzione"<<endl;
 				}
-			} while(check==false);
-			check==false;
+			} while(!check);
+			check=false;
 			cout<<"quanti ne vuoi chiedere?"<<endl;
 			do {
 				cin>>nB;
@@ -170,8 +170,8 @@ int main() {
 				} else {
 					cout<<"il giocatore non ne possiede abbastanza, inserisci un nuovo valore da richiedere"<<endl;
 				}
-			} while(check==false);
-			check==false;
+			} while(!check);
+			check=false;
 			cout<<giocatori[b].GetNome()<<", accetti lo scambio di "<<nA<<nomeanimali[tipoA]<<" per "<<nB<<nomeanimali[tipoB]<<"? (y/n)"<<endl;
 			cin>>risposta;
 			if(risposta=='y'||risposta=='Y'){
@@ -195,11 +195,11 @@ int main() {
 		
 		}while(scelta!='x'&&scelta!='X');
 
-		for(int i=0; i<n_players;){
+		vittoria=false;
+		for(int i=0; i<n_players;i++){
 			if(giocatori[i].GetAnimale(0)>0 && giocatori[i].GetAnimale(1) && giocatori[i].GetAnimale(2) &&giocatori[i].GetAnimale(3) &&giocatori[i].GetAnimale(4)>0){
 				vittoria=true;
 				vincitore=i;
-				i++;
 				}
 			}
 
