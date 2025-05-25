@@ -114,6 +114,86 @@ void Player::TiroDadi()
     12)Lupo
     */
 //VOLPE E LUPO:
+cout<<"risultato dado 1:    ";
+switch(dado1){
+    case 1:
+        cout<<"coniglio"<<endl;
+        break;
+    case 2:
+        cout<<"coniglio"<<endl;
+        break;
+    case 3:
+        cout<<"coniglio"<<endl;
+        break;
+    case 4:
+        cout<<"coniglio"<<endl;
+        break;
+    case 5:
+        cout<<"coniglio"<<endl;
+        break;
+    case 6:
+        cout<<"coniglio"<<endl;
+        break;
+    case 7:
+        cout<<"maiale"<<endl;
+        break;
+    case 8:
+        cout<<"pecora"<<endl;
+        break;
+    case 9:
+        cout<<"pecora"<<endl;
+        break;
+    case 10:
+        cout<<"mucca"<<endl;
+        break;
+    case 11:
+        cout<<"cavallo"<<endl;
+        break;
+    case 12:
+        cout<<"lupo"<<endl;
+        break;  
+}
+
+cout<<"risultato dado 2:    ";
+switch(dado2){
+    case 1:
+        cout<<"coniglio"<<endl;
+        break;
+    case 2:
+        cout<<"coniglio"<<endl;
+        break;
+    case 3:
+        cout<<"coniglio"<<endl;
+        break;
+    case 4:
+        cout<<"coniglio"<<endl;
+        break;
+    case 5:
+        cout<<"coniglio"<<endl;
+        break;
+    case 6:
+        cout<<"coniglio"<<endl;
+        break;
+    case 7:
+        cout<<"maiale"<<endl;
+        break;
+    case 8:
+        cout<<"pecora"<<endl;
+        break;
+    case 9:
+        cout<<"pecora"<<endl;
+        break;
+    case 10:
+        cout<<"cavallo"<<endl;
+        break;
+    case 11:
+        cout<<"volpe"<<endl;
+        break;
+    case 12:
+        cout<<"mucca"<<endl;
+        break;  
+}
+
 if(dado2==12)
 {
     if(CaneGrande==false)
@@ -229,8 +309,8 @@ void Player::Stampainventario() {
     // Nomi degli animali ordinati secondo l'indice dell'array animali[]
     string Nomianimali[5] = {
         "conigli",
-        "pecore",
         "maiali",
+        "pecore",
         "mucche",
         "cavalli"
     };

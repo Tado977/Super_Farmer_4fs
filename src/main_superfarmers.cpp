@@ -70,7 +70,8 @@ int main() {
 	Player giocatori[n_players];
 	cout<<"inserire nome giocatori"<<endl;
 	for(int i=0; i<n_players; i++) {
-		cin>>nome;
+		cin.ignore();
+		getline(cin, nome);
 		giocatori[i].SetNome(nome);
 	}
 	bool vittoria=false;
@@ -105,9 +106,10 @@ int main() {
 			case'B':
 			a=turno;
 					cout<<"inserire nome del giocatore "<<endl;
-			do {
-				cin>>gioc_scelto;
-				for(b=0; b<n_players; b++) {
+			//do {
+				cin.ignore();
+				getline(cin, gioc_scelto);
+				/*for(b=0; b<n_players; b++) {
 					if(giocatori[b].GetNome()==gioc_scelto) {
 						check=true;
 					}
@@ -115,7 +117,7 @@ int main() {
 						cout<<"nome non valido, riprova"<<endl;
 					}
 				}
-			} while(!check);
+			} while(!check);*/
 			
 			cout<<"avvio scambio tra "<<giocatori[a].GetNome();
 			cout<<" e "<<giocatori[b].GetNome();
