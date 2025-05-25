@@ -12,8 +12,8 @@ using namespace std;
     0)conigli
     1)maiali
     2)pecore
-    3)cavalli
     4)mucche
+    3)cavalli
     */
 
 //METODI AGGIUNTA    
@@ -383,18 +383,18 @@ void Player::Scambio() {
         if (risposta1 == 3){
         if(Animali[3]<1){cout<<"non hai mucche sufficienti";}else{
             cout << "Si è scambiato 1 mucca per tre maiali" << endl;
-            Animali[3] -= 1;
+            Animali[4] -= 1;
             Animali[2] += 3;
         }
         }
-        else if (risposta1 == 4) {
-        if (Animali[4]<1) {
+        else if (risposta1 == 3) {
+        if (Animali[3]<1) {
             cout<<"non hai cavalli sufficienti";
         }
         else{
             cout << "Si è scambiato 1 cavallo per due mucche" << endl;
-            Animali[4] -= 1;
-            Animali[3] += 2;
+            Animali[3] -= 1;
+            Animali[4] += 2;
         }
         }
         if (risposta1 == 5) {
@@ -409,7 +409,7 @@ void Player::Scambio() {
         if (risposta1 == 6) {
             if (Animali[3] >= 1 && !CaneGrande) {
                 cout << "Si è scambiato 1 mucca per un cane grande" << endl;
-                Animali[3] -= 1;
+                Animali[4] -= 1;
                 CaneGrande = true;
             } else {
                 cout << "Scambio non valido: hai già un cane grande o non hai abbastanza mucche." << endl;
@@ -451,12 +451,12 @@ void Player::Scambio() {
         {
             cout << "Si è scambiato 3 maiali per una mucca" << endl;
             Animali[2] -= 3;
-            Animali[3] += 1;
+            Animali[4] += 1;
         }
         if (risposta1 == 10) {
             cout << "Si è scambiato 2 mucche per un cavallo" << endl;
-            Animali[3] -= 2;
-            Animali[4] += 1;
+            Animali[4] -= 2;
+            Animali[3] += 1;
         }
         if (risposta1 == 11) {
             if (CanePiccolo) {
@@ -470,7 +470,7 @@ void Player::Scambio() {
         if (risposta1 == 12) {
             if (CaneGrande) {
                 cout << "Si è scambiato un cane grande per una mucca" << endl;
-                Animali[3] += 1;
+                Animali[4] += 1;
                 CaneGrande = false;
             }else {
                 cout << "Non possiedi un cane grande da scambiare." << endl;
