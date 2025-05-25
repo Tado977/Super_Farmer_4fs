@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Super Farmer - La Storia e le Regole</title>
+Super Farmer - La Storia e le Regole
 </head>
 <body>
   <h1>SUPER FARMER: un gioco nato dalla resilienza</h1>
@@ -21,8 +21,8 @@
   <p>Le conversioni possono essere fatte liberamente e strategicamente. Il gioco procede a turni fino a quando un giocatore riesce ad avere almeno un animale di ogni tipo, vincendo così la partita.</p>
   <p><strong>SUPER FARMER</strong> è un gioco adatto a bambini e adulti, capace di stimolare la logica, la pianificazione e la gestione delle risorse, con un pizzico di casualità dato dal lancio dei dadi.</p>
   <h2> Come funziona il programma </h2>
-  <p>il programma si struttura in due parti principali: un main e una classe player</p>
-  <p> la classe player contiene la funzione per aggiungere e visualizzare gli animali, l'inventario del singolo giocatore e la funzione scambio, per poter effettuare un baratto con il mercato fisso</p>
-  <p> la classe main invece si occupa della struttura della partità, proponendo un menù iniziale e l'avvio del game, inserendo prima un numero di giocatori e facendo partire i rispettivi turni</p>
+  <p>il programma si struttura in due parti principali: un main e una classe player
+la classe player contiene la funzione per aggiungere e visualizzare gli animali, l'inventario del singolo giocatore e la funzione scambio, per poter effettuare un baratto con il mercato fisso
+la classe main invece si occupa della struttura della partità, proponendo un menù iniziale e l'avvio del game, inserendo prima un numero di giocatori e facendo partire i rispettivi turni</p>
 </body>
 </html>
