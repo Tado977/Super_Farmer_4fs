@@ -38,10 +38,11 @@ void mostraScambi() {
 
 int main() {
 
-	srand(time(NULL));
+	srand(time(NULL));//necessaria per funzione rand
 	int opzione;
 
 	cout << "Benvenuto a Superfarmers" << endl;
+	//Ciclo iniziale per scelta input
 	do{
 	cout<<"Cosa vuoi fare?"<<endl;
 	cout<<"1) Mostra scambi possibili"<<endl;
@@ -67,11 +68,11 @@ int main() {
 
 	cout<<"inserire tot giocatori"<<endl;
 	cin>>n_players;
-	Player giocatori[n_players];
+	Player giocatori[n_players]; //ogni giocatore è rappresentato da un vettore, i giocatori formano un ulteriore vettore
 	cout<<"inserire nome giocatori"<<endl;
 	for(int i=0; i<n_players; i++) {
-		cin.ignore();
-		getline(cin, nome);
+		cin.ignore(); //Funzione necessaria per funzionamento corretto di getline
+		getline(cin, nome); //Utilizzato per nomi con eventuali spazi
 		giocatori[i].SetNome(nome);
 	}
 	bool vittoria=false;
@@ -81,6 +82,7 @@ int main() {
 	char scelta;
 	int turno=0;//ATTENZIONE: indica il numero del giocatore che deve giocare
 	while (!vittoria) {
+		//Tiro dei dadi nel turno e risultati
 		check=false;
 		cout<<"TURNO DI "<<giocatori[turno].GetNome()<<endl<<endl<<endl;
 		cout<<"stampa inventario..."<<endl;
@@ -89,7 +91,7 @@ int main() {
 		giocatori[turno].TiroDadi();
 		giocatori[turno].Stampainventario();
 		cout<<endl<<endl<<endl;
-
+		//Scelta in input
 		do{
 		cout<<"inserire scelta:"<<endl;
 		cout<<"A. effettuare uno scambio con la Riserva"<<endl;
@@ -99,25 +101,16 @@ int main() {
 		
 		switch (scelta) {
 		case'a':
-			case'A':
-					giocatori[turno].Scambio();
+			case'A'://Funzione scambio con riserva
+					giocatori[turno].Scambio(); 
 			break;
 		case'b':
-			case'B':
+			case'B'://Scambio giocatori in main per necessita di accordo tra i due giocatori
 			a=turno;
 					cout<<"inserire nome del giocatore "<<endl;
-			//do {
 				cin.ignore();
 				getline(cin, gioc_scelto);
-				/*for(b=0; b<n_players; b++) {
-					if(giocatori[b].GetNome()==gioc_scelto) {
-						check=true;
-					}
-					if (!check) {
-						cout<<"nome non valido, riprova"<<endl;
-					}
-				}
-			} while(!check);*/
+
 			
 			cout<<"avvio scambio tra "<<giocatori[a].GetNome();
 			cout<<" e "<<giocatori[b].GetNome();
@@ -129,6 +122,7 @@ int main() {
 			giocatori[b].Stampainventario();
 			cout<<"cosa vuoi cedere?: scegliere opzione"<<endl;
 			cout<<"1: conigli"<<endl<<"2: pecore"<<endl<<"3: maiali"<<endl<<"4: mucche"<<endl<<"5: cavallo"<<endl;
+			//Controllo se il giocatore possiede l'animale che vuole scambiare
 			do {
 				cin>>tipoA;
 				tipoA--;
@@ -141,6 +135,7 @@ int main() {
 			} while(!check);
 			check=false;
 			cout<<"quanti ne vuoi cedere?"<<endl;
+			//Controllo se il giocatore possiede gli animali che vuole scambiare
 			do {
 				cin>>nA;
 				if (giocatori[a].GetAnimale(tipoA)>nA) {
@@ -153,6 +148,7 @@ int main() {
 
 			cout<<"cosa vuoi chiedere a "<<giocatori[b].GetNome()<<"?: scegliere opzione"<<endl;
 			cout<<"1: conigli"<<endl<<"2: pecore"<<endl<<"3: maiali"<<endl<<"4: mucche"<<endl<<"5: cavallo"<<endl;
+			//Controllo se il giocatore possiede l'animale che vuole ottenere
 			do {
 				cin>>tipoB;
 				tipoB--;
@@ -165,6 +161,7 @@ int main() {
 			} while(!check);
 			check=false;
 			cout<<"quanti ne vuoi chiedere?"<<endl;
+			//Controllo se il giocatore possiede gli animali che vuole ottenere
 			do {
 				cin>>nB;
 				if (giocatori[b].GetAnimale(tipoB)>nB) {
@@ -183,13 +180,13 @@ int main() {
 				//ANIMALI ACQUISITI DA A A B
 				giocatori[a].AggiungiAnimale(nB, tipoB);
 				giocatori[b].AggiungiAnimale(-nB, tipoB);
-				cout<<"scambio effettuato! :3"<<endl;
+				cout<<"scambio effettuato!"<<endl;
 			} else {
-				cout<<"scambio annullato :["<<endl;
+				cout<<"scambio annullato"<<endl;
 			}
 			break;
 		case 'X':
-		case 'x':
+		case 'x'://Conclusione turno
 			giocatori[turno].ConcludiTurno();
 			cout<<"turno finito"<<endl;
 			break;
@@ -198,6 +195,7 @@ int main() {
 		}while(scelta!='x'&&scelta!='X');
 
 		vittoria=false;
+		//Controllo se ci sono vincitori
 		for(int i=0; i<n_players;i++){
 			if(giocatori[i].GetAnimale(0)>0 && giocatori[i].GetAnimale(1) && giocatori[i].GetAnimale(2) &&giocatori[i].GetAnimale(3) &&giocatori[i].GetAnimale(4)>0){
 				vittoria=true;

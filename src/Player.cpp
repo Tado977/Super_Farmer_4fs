@@ -193,7 +193,7 @@ switch(dado2){
         cout<<"mucca"<<endl;
         break;  
 }
-
+//Caso Lupo
 if(dado2==12)
 {
     if(CaneGrande==false)
@@ -209,6 +209,7 @@ if(dado2==12)
         return;
     }
 }
+//Caso Volpe
 if(dado1==11)
 {
     if(CanePiccolo==false)
@@ -266,34 +267,43 @@ if (
     return;
 }
 //ANIMALI DIVERSI
+
+//Coniglio su dado1
 if(dado1>=1 && dado1<=6)
 {
     AggiungiConiglio(Animali[0]/2);
 }
+//Coniglio su dado2
 if(dado2>=1 && dado2<=6)
 {
     AggiungiConiglio(Animali[0]/2);
 }
+//maiale su dado1
 if(dado1==7)
 {
     AggiungiMaiale(Animali[1]/2);
 }
+//maiale su dado2
 if(dado2==7)
 {
     AggiungiMaiale(Animali[1]/2);
 }
+//pecora su dado1
 if(dado1==8 || dado1==9)
 {
     AggiungiPecora(Animali[2]/2);
 }
+//pecora su dado2
 if(dado2==8 || dado2==9)
 {
     AggiungiPecora(Animali[2]/2);
 }
+//mucca 
 if(dado1==12 || dado2==10)
 {
     AggiungiMucca(Animali[4]/2);
 }
+//cavallo
 if(dado1==10 || dado2==11)
 {
     AggiungiCavallo(Animali[3]/2);
@@ -479,6 +489,7 @@ void Player::Scambio() {
     }
 }
 
+//Animali di troppo vengono eliminati
 void Player::ConcludiTurno(){
     for (int i=0; i<5;i++){
         if(Animali[i]>(4-i)){

@@ -1,7 +1,4 @@
-/*#ifndef PLAYER_H
-#define PLAYER_H
 
-#pragma once */
 using namespace std;
 #include <string>
 class Player
@@ -10,14 +7,6 @@ class Player
     bool CaneGrande;
     bool CanePiccolo;
     string Nome;
-    /*
-    0)conigli
-    1)capre
-    2)maiali
-    3)pecore
-    4)cavalli
-    5)mucche
-    */
 public:
     Player();
     void AggiungiConiglio(int);
@@ -53,4 +42,3 @@ public:
     }
 };
 
-//#endif
